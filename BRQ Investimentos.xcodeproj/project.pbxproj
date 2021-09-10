@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		0B13385D26EB94D800C0255D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13385C26EB94D800C0255D /* AppDelegate.swift */; };
 		0B13385F26EB94D800C0255D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13385E26EB94D800C0255D /* SceneDelegate.swift */; };
-		0B13386126EB94D800C0255D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13386026EB94D800C0255D /* ViewController.swift */; };
 		0B13386426EB94D800C0255D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386226EB94D800C0255D /* Main.storyboard */; };
 		0B13386626EB94D900C0255D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386526EB94D900C0255D /* Assets.xcassets */; };
 		0B13386926EB94D900C0255D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386726EB94D900C0255D /* LaunchScreen.storyboard */; };
+		0B13387326EBA9B300C0255D /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13387226EBA9B300C0255D /* HomeTableViewController.swift */; };
+		0B13388526EBC23800C0255D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388426EBC23800C0255D /* Currency.swift */; };
+		0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B13385926EB94D800C0255D /* BRQ Investimentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BRQ Investimentos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B13385C26EB94D800C0255D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B13385E26EB94D800C0255D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0B13386026EB94D800C0255D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B13386326EB94D800C0255D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B13386526EB94D900C0255D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B13386826EB94D900C0255D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B13386A26EB94D900C0255D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B13387226EBA9B300C0255D /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		0B13388426EBC23800C0255D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		0B13385B26EB94D800C0255D /* BRQ Investimentos */ = {
 			isa = PBXGroup;
 			children = (
+				0B13387A26EBAA8100C0255D /* Model */,
+				0B13387826EBA9FE00C0255D /* View */,
+				0B13387C26EBAC5300C0255D /* Controller */,
+				0B13387D26EBACBA00C0255D /* API */,
+				0B13387E26EBACBF00C0255D /* Utills */,
 				0B13385C26EB94D800C0255D /* AppDelegate.swift */,
 				0B13385E26EB94D800C0255D /* SceneDelegate.swift */,
-				0B13386026EB94D800C0255D /* ViewController.swift */,
 				0B13386226EB94D800C0255D /* Main.storyboard */,
 				0B13386526EB94D900C0255D /* Assets.xcassets */,
 				0B13386726EB94D900C0255D /* LaunchScreen.storyboard */,
 				0B13386A26EB94D900C0255D /* Info.plist */,
 			);
 			path = "BRQ Investimentos";
+			sourceTree = "<group>";
+		};
+		0B13387826EBA9FE00C0255D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B13387A26EBAA8100C0255D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B13388426EBC23800C0255D /* Currency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B13387C26EBAC5300C0255D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B13387226EBA9B300C0255D /* HomeTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B13387D26EBACBA00C0255D /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0B13387E26EBACBF00C0255D /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B13386126EB94D800C0255D /* ViewController.swift in Sources */,
+				0B13387326EBA9B300C0255D /* HomeTableViewController.swift in Sources */,
 				0B13385D26EB94D800C0255D /* AppDelegate.swift in Sources */,
+				0B13388526EBC23800C0255D /* Currency.swift in Sources */,
 				0B13385F26EB94D800C0255D /* SceneDelegate.swift in Sources */,
+				0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tedizin.BRQ-Investimentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tedizin.BRQ-Investimentos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
