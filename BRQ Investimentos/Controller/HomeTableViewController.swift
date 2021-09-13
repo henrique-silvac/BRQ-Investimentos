@@ -13,17 +13,22 @@ class HomeTableViewController: UITableViewController {
     
     let baseURL = "https://api.hgbrasil.com/finance"
     
-    var currencies: [Currency] = []
+    var currencies: [CurrencyData] = []
     //["USD","EUR","GBP","ARS","CAD","AUD","JPY","CNY","BTC"]
-    var APIKey = "7bf8e6a7"
+    public let APIKey = "7bf8e6a7"
+    
+    let cellSpacingHeight: CGFloat = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         fetchData(url: baseURL)
         
-        var name: Currency
-        name = Currency(name: "USD", variation: 0)
-        currencies.append(name)
+        var currency: CurrencyData
+        currency = CurrencyData(name: "USD", buy: 0, sell: 0, variation: 0)
+        currencies.append(currency)
         
     }
 
@@ -38,7 +43,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 24
+        return cellSpacingHeight
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -49,10 +54,10 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let name: Currency = currencies[indexPath.row]
+        let name: CurrencyData = currencies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
         
-        cell.ISOLabel.text = name.ISOname
+        cell.ISOLabel.text = name.name
         
         cell.cellView.layer.borderWidth = 1
         cell.cellView.layer.borderColor = UIColor.white.cgColor
@@ -86,7 +91,6 @@ class HomeTableViewController: UITableViewController {
     func parseJSON(json: Data) {
 
         do {
-
             if let json = try JSONSerialization.jsonObject(with: json, options: .mutableContainers) as? [String: Any] {
                 print(json)
                 if let askValue = json["ask"] as? NSNumber {
@@ -94,7 +98,6 @@ class HomeTableViewController: UITableViewController {
                 }
             }
         } catch {
-
             print("error parsing json: \(error)")
         }
     }

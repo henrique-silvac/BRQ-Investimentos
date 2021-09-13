@@ -15,6 +15,8 @@
 		0B13387326EBA9B300C0255D /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13387226EBA9B300C0255D /* HomeTableViewController.swift */; };
 		0B13388526EBC23800C0255D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388426EBC23800C0255D /* Currency.swift */; };
 		0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */; };
+		0BCB18B226EFA4E300F7F988 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB18B126EFA4E300F7F988 /* Service.swift */; };
+		0BCB18B526EFA8B300F7F988 /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0B13387226EBA9B300C0255D /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		0B13388426EBC23800C0255D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		0BCB18B126EFA4E300F7F988 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				0B13388426EBC23800C0255D /* Currency.swift */,
+				0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 		0B13387D26EBACBA00C0255D /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0BCB18B126EFA4E300F7F988 /* Service.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -187,7 +193,9 @@
 				0B13385D26EB94D800C0255D /* AppDelegate.swift in Sources */,
 				0B13388526EBC23800C0255D /* Currency.swift in Sources */,
 				0B13385F26EB94D800C0255D /* SceneDelegate.swift in Sources */,
+				0BCB18B526EFA8B300F7F988 /* CurrencyData.swift in Sources */,
 				0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */,
+				0BCB18B226EFA4E300F7F988 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

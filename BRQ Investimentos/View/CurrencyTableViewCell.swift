@@ -11,6 +11,6 @@ class CurrencyTableViewCell: UITableViewCell {
     
     @IBOutlet var cellView: UIView!
     @IBOutlet var ISOLabel: UILabel!
-    @IBOutlet var percentageLabel: UILabel!
+    @IBOutlet var variationLabel: UILabel!
     
 }

@@ -11,8 +11,8 @@ struct Currency {
     let ISOname: String
     let variation: Double
     
-    init (name: String, variation: Double) {
-        self.ISOname = name
+    init (ISOname: String, variation: Double) {
+        self.ISOname = ISOname
         self.variation = variation
     }
 }
