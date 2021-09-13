@@ -13,7 +13,6 @@
 		0B13386626EB94D900C0255D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386526EB94D900C0255D /* Assets.xcassets */; };
 		0B13386926EB94D900C0255D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386726EB94D900C0255D /* LaunchScreen.storyboard */; };
 		0B13387326EBA9B300C0255D /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13387226EBA9B300C0255D /* HomeTableViewController.swift */; };
-		0B13388526EBC23800C0255D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388426EBC23800C0255D /* Currency.swift */; };
 		0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */; };
 		0BCB18B226EFA4E300F7F988 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB18B126EFA4E300F7F988 /* Service.swift */; };
 		0BCB18B526EFA8B300F7F988 /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */; };
@@ -28,7 +27,6 @@
 		0B13386826EB94D900C0255D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B13386A26EB94D900C0255D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B13387226EBA9B300C0255D /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		0B13388426EBC23800C0255D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		0BCB18B126EFA4E300F7F988 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		0B13387A26EBAA8100C0255D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B13388426EBC23800C0255D /* Currency.swift */,
 				0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */,
 			);
 			path = Model;
@@ -191,7 +188,6 @@
 			files = (
 				0B13387326EBA9B300C0255D /* HomeTableViewController.swift in Sources */,
 				0B13385D26EB94D800C0255D /* AppDelegate.swift in Sources */,
-				0B13388526EBC23800C0255D /* Currency.swift in Sources */,
 				0B13385F26EB94D800C0255D /* SceneDelegate.swift in Sources */,
 				0BCB18B526EFA8B300F7F988 /* CurrencyData.swift in Sources */,
 				0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */,

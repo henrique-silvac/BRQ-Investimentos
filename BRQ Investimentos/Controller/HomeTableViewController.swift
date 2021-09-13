@@ -13,7 +13,7 @@ class HomeTableViewController: UITableViewController {
     
     public let baseURL = "https://api.hgbrasil.com/finance"
     
-    var currencies: [Currency] = []
+    var currencies: [CurrencyData] = []
     //["USD","EUR","GBP","ARS","CAD","AUD","JPY","CNY","BTC"]
     public let APIKey = "7bf8e6a7"
     
@@ -27,14 +27,6 @@ class HomeTableViewController: UITableViewController {
         tableView.dataSource = self
         
         fetchData(url: baseURL)
-        
-        var currency: Currency
-        currency = Currency(ISOname: "USD", variation: 0.0)
-        currencies.append(currency)
-        currency = Currency(ISOname: "EUR", variation: 1.0)
-        currencies.append(currency)
-        currency = Currency(ISOname: "GBP", variation: 0.1)
-        currencies.append(currency)
         
     }
 
@@ -60,10 +52,10 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let name: Currency = currencies[indexPath.row]
+        let name: CurrencyData = currencies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
         
-        cell.ISOLabel.text = name.ISOname
+        cell.ISOLabel.text = name.name
         
         cell.cellView.layer.borderWidth = 1
         cell.cellView.layer.borderColor = UIColor.white.cgColor
