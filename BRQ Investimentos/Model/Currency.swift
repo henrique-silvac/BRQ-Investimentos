@@ -8,7 +8,11 @@
 import Foundation
 
 struct Currency {
-    let name: String
-    let body: String
+    let ISOname: String
+    let variation: Double
     
+    init (name: String, variation: Double) {
+        self.ISOname = name
+        self.variation = variation
+    }
 }
