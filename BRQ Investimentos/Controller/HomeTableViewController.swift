@@ -11,13 +11,15 @@ class HomeTableViewController: UITableViewController {
     
     //MARK: - Properties
     
-    let baseURL = "https://api.hgbrasil.com/finance"
+    public let baseURL = "https://api.hgbrasil.com/finance"
     
-    var currencies: [CurrencyData] = []
+    var currencies: [Currency] = []
     //["USD","EUR","GBP","ARS","CAD","AUD","JPY","CNY","BTC"]
     public let APIKey = "7bf8e6a7"
     
     let cellSpacingHeight: CGFloat = 5
+    
+    //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,12 @@ class HomeTableViewController: UITableViewController {
         
         fetchData(url: baseURL)
         
-        var currency: CurrencyData
-        currency = CurrencyData(name: "USD", buy: 0, sell: 0, variation: 0)
+        var currency: Currency
+        currency = Currency(ISOname: "USD", variation: 0.0)
+        currencies.append(currency)
+        currency = Currency(ISOname: "EUR", variation: 1.0)
+        currencies.append(currency)
+        currency = Currency(ISOname: "GBP", variation: 0.1)
         currencies.append(currency)
         
     }
@@ -54,10 +60,10 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let name: CurrencyData = currencies[indexPath.row]
+        let name: Currency = currencies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
         
-        cell.ISOLabel.text = name.name
+        cell.ISOLabel.text = name.ISOname
         
         cell.cellView.layer.borderWidth = 1
         cell.cellView.layer.borderColor = UIColor.white.cgColor
@@ -70,12 +76,8 @@ class HomeTableViewController: UITableViewController {
     //MARK: - Data
     
     func fetchData(url: String) {
-
         let url = URL(string: url)!
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
+        let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
                 self.parseJSON(json: data)
@@ -92,9 +94,14 @@ class HomeTableViewController: UITableViewController {
 
         do {
             if let json = try JSONSerialization.jsonObject(with: json, options: .mutableContainers) as? [String: Any] {
-                print(json)
-                if let askValue = json["ask"] as? NSNumber {
-                    print(askValue)
+                if let jsonDictionary = json as? [String: Any] {
+                    if let results = jsonDictionary["results"] as? [String: Any] {
+                        if let currencies = results["currencies"] as? [String: Any] {
+                            for (key, value) in currencies {
+                                print(key)
+                            }
+                        }
+                    }
                 }
             }
         } catch {
