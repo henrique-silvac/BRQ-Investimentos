@@ -3,6 +3,8 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -77,6 +79,21 @@
             </objects>
             <point key="canvasLocation" x="947.66355140186909" y="29.805615550755942"/>
         </scene>
+        <!--Cambio View Controller-->
+        <scene sceneID="L54-fh-FEy">
+            <objects>
+                <viewController id="9dh-yA-Qy9" customClass="CambioViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zuW-in-GBb">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7rl-oh-W1d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wLf-5m-yq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="30"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ih-q5-Iyx">
             <objects>
@@ -100,4 +117,9 @@
             <point key="canvasLocation" x="215.8878504672897" y="30.45356371490281"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
