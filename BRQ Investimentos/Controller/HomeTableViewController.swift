@@ -13,11 +13,11 @@ class HomeTableViewController: UITableViewController {
     
     public let baseURL = "https://api.hgbrasil.com/finance"
     
-    var currencies: [Currency] = []
+    var currencies: [CurrencyTest] = []
     //["USD","EUR","GBP","ARS","CAD","AUD","JPY","CNY","BTC"]
     public let APIKey = "7bf8e6a7"
     
-    let cellSpacingHeight: CGFloat = 5
+    let cellSpacingHeight: CGFloat = 24
     
     //MARK: - Lifecycle
 
@@ -28,23 +28,23 @@ class HomeTableViewController: UITableViewController {
         
         fetchData(url: baseURL)
         
-        var currency: Currency
-        currency = Currency(ISOname: "USD", variation: 0.0)
-        currencies.append(currency)
-        currency = Currency(ISOname: "EUR", variation: 1.0)
-        currencies.append(currency)
-        currency = Currency(ISOname: "GBP", variation: 0.1)
-        currencies.append(currency)
+        var currencie: CurrencyTest
+        currencie = CurrencyTest(name: "USD", buy: 0.0, sell: 0.0, variation: 0)
+        currencies.append(currencie)
+        currencie = CurrencyTest(name: "EUR", buy: 0.0, sell: 0.0, variation: 0)
+        currencies.append(currencie)
+        currencie = CurrencyTest(name: "GBP", buy: 0.0, sell: 0.0, variation: 0)
+        currencies.append(currencie)
         
     }
 
     // MARK: - Table view data source
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return currencies.count
     }
     
@@ -60,15 +60,12 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let name: Currency = currencies[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
+        let name: CurrencyTest = currencies[indexPath.section]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
         
-        cell.ISOLabel.text = name.ISOname
+        cell.ISOLabel.text = name.name
         
-        cell.cellView.layer.borderWidth = 1
-        cell.cellView.layer.borderColor = UIColor.white.cgColor
-        cell.cellView.layer.cornerRadius = 26
-        cell.cellView.clipsToBounds = true
+        cell.cellView.setBorderView()
         
         return cell
     }

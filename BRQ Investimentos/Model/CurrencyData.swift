@@ -13,4 +13,16 @@ struct CurrencyData: Codable {
     let sell: Double?
     let variation: Double?
     
+    init?(json: [String: Any]) {
+        guard let buy = json["buy"] as? Double,
+              let name = json["name"] as? String,
+              let sell = json["name"] as? Double,
+              let variation = json["variation"] as? Double
+        else {return nil}
+        
+        self.buy = buy
+        self.name = name
+        self.sell = sell
+        self.variation = variation
+    }
 }

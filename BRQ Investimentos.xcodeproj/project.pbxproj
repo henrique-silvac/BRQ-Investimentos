@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B004F9D26F125A700863B14 /* CambioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B004F9C26F125A700863B14 /* CambioViewController.swift */; };
 		0B13385D26EB94D800C0255D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13385C26EB94D800C0255D /* AppDelegate.swift */; };
 		0B13385F26EB94D800C0255D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13385E26EB94D800C0255D /* SceneDelegate.swift */; };
 		0B13386426EB94D800C0255D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386226EB94D800C0255D /* Main.storyboard */; };
 		0B13386626EB94D900C0255D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386526EB94D900C0255D /* Assets.xcassets */; };
 		0B13386926EB94D900C0255D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B13386726EB94D900C0255D /* LaunchScreen.storyboard */; };
 		0B13387326EBA9B300C0255D /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13387226EBA9B300C0255D /* HomeTableViewController.swift */; };
-		0B13388526EBC23800C0255D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388426EBC23800C0255D /* Currency.swift */; };
-		0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */; };
+		0B13388F26EBCB7500C0255D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388E26EBCB7500C0255D /* HomeTableViewCell.swift */; };
+		0B1580F726F23D3000E58565 /* UICustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1580F626F23D3000E58565 /* UICustomView.swift */; };
+		0B1580FA26F2410200E58565 /* CurrencyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1580F926F2410200E58565 /* CurrencyTest.swift */; };
 		0BCB18B226EFA4E300F7F988 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB18B126EFA4E300F7F988 /* Service.swift */; };
 		0BCB18B526EFA8B300F7F988 /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B004F9C26F125A700863B14 /* CambioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambioViewController.swift; sourceTree = "<group>"; };
 		0B13385926EB94D800C0255D /* BRQ Investimentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BRQ Investimentos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B13385C26EB94D800C0255D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B13385E26EB94D800C0255D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +31,9 @@
 		0B13386826EB94D900C0255D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B13386A26EB94D900C0255D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B13387226EBA9B300C0255D /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		0B13388426EBC23800C0255D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		0B13388E26EBCB7500C0255D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0B1580F626F23D3000E58565 /* UICustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomView.swift; sourceTree = "<group>"; };
+		0B1580F926F2410200E58565 /* CurrencyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTest.swift; sourceTree = "<group>"; };
 		0BCB18B126EFA4E300F7F988 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +86,7 @@
 		0B13387826EBA9FE00C0255D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0B13388E26EBCB7500C0255D /* CurrencyTableViewCell.swift */,
+				0B13388E26EBCB7500C0255D /* HomeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,8 +94,8 @@
 		0B13387A26EBAA8100C0255D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B13388426EBC23800C0255D /* Currency.swift */,
 				0BCB18B426EFA8B300F7F988 /* CurrencyData.swift */,
+				0B1580F926F2410200E58565 /* CurrencyTest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				0B13387226EBA9B300C0255D /* HomeTableViewController.swift */,
+				0B004F9C26F125A700863B14 /* CambioViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 		0B13387E26EBACBF00C0255D /* Utills */ = {
 			isa = PBXGroup;
 			children = (
+				0B1580F626F23D3000E58565 /* UICustomView.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -189,12 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B004F9D26F125A700863B14 /* CambioViewController.swift in Sources */,
+				0B1580F726F23D3000E58565 /* UICustomView.swift in Sources */,
 				0B13387326EBA9B300C0255D /* HomeTableViewController.swift in Sources */,
 				0B13385D26EB94D800C0255D /* AppDelegate.swift in Sources */,
-				0B13388526EBC23800C0255D /* Currency.swift in Sources */,
 				0B13385F26EB94D800C0255D /* SceneDelegate.swift in Sources */,
 				0BCB18B526EFA8B300F7F988 /* CurrencyData.swift in Sources */,
-				0B13388F26EBCB7500C0255D /* CurrencyTableViewCell.swift in Sources */,
+				0B13388F26EBCB7500C0255D /* HomeTableViewCell.swift in Sources */,
+				0B1580FA26F2410200E58565 /* CurrencyTest.swift in Sources */,
 				0BCB18B226EFA4E300F7F988 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
