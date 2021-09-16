@@ -14,7 +14,6 @@ class HomeTableViewController: UITableViewController {
     public let baseURL = "https://api.hgbrasil.com/finance?&key=7bf8e6a7"
     
     var currencies: [Currency] = []
-    var timer: Timer?
     
     let cellSpacingHeight: CGFloat = 24
     let user = User()
@@ -24,14 +23,7 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         fetchData()
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 216, repeats: true) { [weak self] _ in
-            self?.fetchData()
-        }
         
     }
     

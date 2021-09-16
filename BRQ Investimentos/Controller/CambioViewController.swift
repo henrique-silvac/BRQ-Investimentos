@@ -41,6 +41,7 @@ class CambioViewController: UIViewController {
         
         settingLabels()
         labelsView.setBorderView()
+        amountView.setBorderView()
         sellButton.settingButton()
         buyButton.settingButton()
     }
