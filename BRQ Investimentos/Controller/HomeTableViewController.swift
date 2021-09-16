@@ -14,21 +14,16 @@ class HomeTableViewController: UITableViewController {
     public let baseURL = "https://api.hgbrasil.com/finance?&key=7bf8e6a7"
     
     var currencies: [Currency] = []
-    var timer: Timer?
     
     let cellSpacingHeight: CGFloat = 24
+    let user = User()
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         
         fetchData()
-        timer = Timer.scheduledTimer(withTimeInterval: 216, repeats: true) { [weak self] _ in
-            self?.fetchData()
-        }
         
     }
     
@@ -54,19 +49,28 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HomeTableViewCell else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? HomeTableViewCell else { fatalError() }
         
         settingLabels(cell, for: indexPath)
-        cell.cellView.setBorderView()
+        cell.labelsView.setBorderView()
         
         return cell
+        
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cambioVC = storyboard?.instantiateViewController(identifier: "CambioViewController") as? CambioViewController {
+            cambioVC.currencySelected = currencies[indexPath.section]
+            cambioVC.user = user
+            navigationController?.pushViewController(cambioVC, animated: true)
+        }
+
+    }
+        
     //MARK: - Creating a Cell
     
     func settingLabels(_ cell: HomeTableViewCell, for indexPath: IndexPath) {
         let currency = currencies[indexPath.section]
-        print("\(currency.self)")
         switch currency.name {
         case "Dollar":
             cell.ISOLabel.text = "USD"
@@ -91,17 +95,17 @@ class HomeTableViewController: UITableViewController {
         }
         
         if currency.variation > 0.0 {
-            cell.variationLabel.textColor = UIColor.systemGreen
+            cell.variationLabel.textColor = UIColor.green
         } else if currency.variation == 0.0 {
             cell.variationLabel.textColor = UIColor.white
         } else {
-            cell.variationLabel.textColor = UIColor.systemRed
+            cell.variationLabel.textColor = UIColor.red
         }
         
-        cell.variationLabel.text = String(format: "%.2f", currency.variation) + "%"
+        cell.variationLabel.text = currency.variationString
     }
     
-    //MARK: - Data
+    //MARK: - API
     
     func fetchData() {
         guard let url = URL(string: baseURL) else { return }
@@ -119,8 +123,6 @@ class HomeTableViewController: UITableViewController {
         }
         task.resume()
     }
-    
-    //MARK: - JSON
     
     func parseJSON(_ financeData: Data){
         let decoder = JSONDecoder()
