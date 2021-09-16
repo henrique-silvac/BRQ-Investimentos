@@ -7,12 +7,11 @@
 
 import UIKit
 
-class CambioViewController: UIViewController {
+class CambioViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - IBOutlets
     
     @IBOutlet var labelsView: UICustomView!
-    @IBOutlet var amountView: UICustomView!
     
     @IBOutlet var ISOLabel: UILabel!
     @IBOutlet var variationLabel: UILabel!
@@ -22,7 +21,11 @@ class CambioViewController: UIViewController {
     @IBOutlet var balanceLabel: UILabel!
     @IBOutlet var cashLabel: UILabel!
     
-    @IBOutlet var amountLabel: UILabel!
+    @IBOutlet var amountTextField: UITextField! {
+        didSet {
+                amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+            }
+    }
     
     @IBOutlet var sellButton: UICustomButton!
     @IBOutlet var buyButton: UICustomButton!
@@ -41,12 +44,18 @@ class CambioViewController: UIViewController {
         
         settingLabels()
         labelsView.setBorderView()
-        amountView.setBorderView()
         sellButton.settingButton()
         buyButton.settingButton()
+        
+        amountTextField.layer.cornerRadius = 15
+        amountTextField.layer.borderWidth = 1
+        amountTextField.layer.borderColor = UIColor.white.cgColor
+        amountTextField.attributedPlaceholder =
+            NSAttributedString(string: "Quantidade", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
     }
     
-    //MARK: - 
+    //MARK: - Detail labels
     
     func settingLabels() {
         guard let currency = currencySelected else { return }
@@ -55,9 +64,9 @@ class CambioViewController: UIViewController {
         ISOLabel.text = currency.name
         variationLabel.text = currency.variationString
         if currency.variation > 0 {
-            variationLabel.textColor = UIColor.systemGreen
+            variationLabel.textColor = UIColor(red: 122, green: 198, blue: 79, alpha: 1)
         } else if currency.variation < 0 {
-            variationLabel.textColor = UIColor.systemRed
+            variationLabel.textColor = UIColor(red: 208, green: 2, blue: 27, alpha: 1)
         } else {
             variationLabel.textColor = UIColor.white
         }
@@ -68,6 +77,13 @@ class CambioViewController: UIViewController {
         balanceLabel.text = ("0 \(currency.name) em caixa")
         cashLabel.text = ("Saldo disponível: \(user.balanceLabel)")
     }
+    
+    @objc func doneButtonTappedForMyNumericTextField() {
+        print("Done");
+        amountTextField.resignFirstResponder()
+    }
+    
+    //MARK: - Create Buttons
     
     func ButtonPressed(_ sender: UICustomButton) {
         guard let user = user else { return }
@@ -83,4 +99,28 @@ class CambioViewController: UIViewController {
         
     }
 
+}
+
+//MARK: - Extensions
+
+extension UITextField {
+    func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
+        let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
+        let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
+
+        let toolbar: UIToolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.items = [
+            UIBarButtonItem(title: "Cancel", style: .plain, target: onCancel.target, action: onCancel.action),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: .done, target: onDone.target, action: onDone.action)
+        ]
+        toolbar.sizeToFit()
+
+        self.inputAccessoryView = toolbar
+    }
+
+    // Default actions:
+    @objc func doneButtonTapped() { self.resignFirstResponder() }
+    @objc func cancelButtonTapped() { self.resignFirstResponder() }
 }
