@@ -11,6 +11,9 @@ class CambioViewController: UIViewController {
     
     //MARK: - IBOutlets
     
+    @IBOutlet var labelsView: UICustomView!
+    @IBOutlet var amountView: UICustomView!
+    
     @IBOutlet var ISOLabel: UILabel!
     @IBOutlet var variationLabel: UILabel!
     @IBOutlet var buyLabel: UILabel!
@@ -20,9 +23,6 @@ class CambioViewController: UIViewController {
     @IBOutlet var cashLabel: UILabel!
     
     @IBOutlet var amountLabel: UILabel!
-    
-    @IBOutlet var labelsView: UICustomView!
-    @IBOutlet var amountView: UICustomView!
     
     @IBOutlet var sellButton: UICustomButton!
     @IBOutlet var buyButton: UICustomButton!
@@ -38,9 +38,14 @@ class CambioViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Câmbio"
-        settingCustomBorders()
+        
         settingLabels()
+        labelsView.setBorderView()
+        sellButton.settingButton()
+        buyButton.settingButton()
     }
+    
+    //MARK: - 
     
     func settingLabels() {
         guard let currency = currencySelected else { return }
@@ -63,13 +68,7 @@ class CambioViewController: UIViewController {
         cashLabel.text = ("Saldo disponível: \(user.balanceLabel)")
     }
     
-    func settingCustomBorders() {
-        labelsView.setBorderView()
-        sellButton.settingButton()
-        buyButton.settingButton()
-    }
-    
-    @IBAction func ButtonPressed(_ sender: UICustomButton) {
+    func ButtonPressed(_ sender: UICustomButton) {
         guard let user = user else { return }
         
         if sender.tag == 0 {
@@ -79,8 +78,8 @@ class CambioViewController: UIViewController {
             //buy button
             user.balance -= 10
         }
-        
         settingLabels()
+        
     }
 
 }

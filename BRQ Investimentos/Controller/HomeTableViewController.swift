@@ -16,8 +16,8 @@ class HomeTableViewController: UITableViewController {
     var currencies: [Currency] = []
     var timer: Timer?
     
-    let user = User()
     let cellSpacingHeight: CGFloat = 24
+    let user = User()
     
     //MARK: - Lifecycle
     
@@ -72,13 +72,13 @@ class HomeTableViewController: UITableViewController {
             cambioVC.user = user
             navigationController?.pushViewController(cambioVC, animated: true)
         }
+
     }
-    
+        
     //MARK: - Creating a Cell
     
     func settingLabels(_ cell: HomeTableViewCell, for indexPath: IndexPath) {
         let currency = currencies[indexPath.section]
-        print("\(currency.self)")
         switch currency.name {
         case "Dollar":
             cell.ISOLabel.text = "USD"
@@ -103,17 +103,17 @@ class HomeTableViewController: UITableViewController {
         }
         
         if currency.variation > 0.0 {
-            cell.variationLabel.textColor = UIColor.systemGreen
+            cell.variationLabel.textColor = UIColor.green
         } else if currency.variation == 0.0 {
             cell.variationLabel.textColor = UIColor.white
         } else {
-            cell.variationLabel.textColor = UIColor.systemRed
+            cell.variationLabel.textColor = UIColor.red
         }
         
-        cell.variationLabel.text = String(format: "%.2f", currency.variation) + "%"
+        cell.variationLabel.text = currency.variationString
     }
     
-    //MARK: - Data
+    //MARK: - API
     
     func fetchData() {
         guard let url = URL(string: baseURL) else { return }
@@ -131,8 +131,6 @@ class HomeTableViewController: UITableViewController {
         }
         task.resume()
     }
-    
-    //MARK: - JSON
     
     func parseJSON(_ financeData: Data){
         let decoder = JSONDecoder()

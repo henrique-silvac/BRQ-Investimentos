@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="efl-e2-Ier">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="efl-e2-Ier">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,19 +11,19 @@
         <scene sceneID="xOw-9N-5hO">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="fOh-XU-RS9" customClass="HomeTableViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xU0-CU-OF9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xU0-CU-OF9">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="100" id="3wN-ql-PWs" customClass="HomeTableViewCell" customModule="BRQ_Investimentos" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="428" height="100"/>
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3wN-ql-PWs" id="Ltf-gb-Gxb">
                                     <rect key="frame" x="0.0" y="0.0" width="428" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Xd-Oy-UEg" customClass="UICustomView" customModule="BRQ_Investimentos" customModuleProvider="target">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Xd-Oy-UEg" customClass="UICustomView" customModule="BRQ_Investimentos" customModuleProvider="target">
                                             <rect key="frame" x="24" y="0.0" width="380" height="100"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-pI-rR0">
@@ -35,7 +35,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daA-zR-6IL">
                                                     <rect key="frame" x="318.33333333333331" y="21" width="45.666666666666686" height="59"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.47843137254901957" green="0.7777419686" blue="0.30799207090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -50,6 +50,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="2Xd-Oy-UEg" firstAttribute="centerY" secondItem="Ltf-gb-Gxb" secondAttribute="centerY" id="Gtl-al-li3"/>
                                         <constraint firstItem="2Xd-Oy-UEg" firstAttribute="centerX" secondItem="Ltf-gb-Gxb" secondAttribute="centerX" id="Hxl-s0-wFP"/>
@@ -76,12 +77,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ygb-o3-iYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947.66355140186909" y="29.805615550755942"/>
+            <point key="canvasLocation" x="941" y="30"/>
         </scene>
-        <!--Cambio View Controller-->
+        <!--Câmbio-->
         <scene sceneID="L54-fh-FEy">
             <objects>
-                <viewController storyboardIdentifier="CambioViewController" id="9dh-yA-Qy9" customClass="CambioViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CambioViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9dh-yA-Qy9" customClass="CambioViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zuW-in-GBb">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,12 +96,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zou-fw-IVR" userLabel="View 1" customClass="UICustomView" customModule="BRQ_Investimentos" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red">
                                 <rect key="frame" x="24" y="68" width="380" height="174"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISO - Moeda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wix-Mi-zxp">
-                                        <rect key="frame" x="16" y="15" width="349" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-VX-oG4">
                                         <rect key="frame" x="16" y="56" width="46" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -116,6 +111,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venda: R$ 0,0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZw-DG-GdH">
                                         <rect key="frame" x="16" y="134" width="102" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISO - Moeda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wix-Mi-zxp">
+                                        <rect key="frame" x="16" y="15" width="349" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -204,16 +205,16 @@
                             <constraint firstItem="RYh-1Y-dOi" firstAttribute="centerX" secondItem="zuW-in-GBb" secondAttribute="centerX" id="vQo-qZ-K6n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ia1-bW-dfP"/>
+                    <navigationItem key="navigationItem" title="Câmbio" id="Ia1-bW-dfP"/>
                     <connections>
                         <outlet property="ISOLabel" destination="Wix-Mi-zxp" id="jpW-7c-HBR"/>
                         <outlet property="amountLabel" destination="oca-Lk-Em4" id="wHp-WB-x7s"/>
-                        <outlet property="amountView" destination="358-ce-8Fh" id="UkT-Pk-IZ2"/>
+                        <outlet property="amountView" destination="358-ce-8Fh" id="dKY-zb-C15"/>
                         <outlet property="balanceLabel" destination="ZwP-6b-Vpl" id="LKR-EM-tbs"/>
                         <outlet property="buyButton" destination="DWf-zX-eVc" id="bp8-2s-Fww"/>
                         <outlet property="buyLabel" destination="FLe-Np-3fr" id="IpS-k8-RfY"/>
                         <outlet property="cashLabel" destination="RYh-1Y-dOi" id="lyS-en-5n2"/>
-                        <outlet property="labelsView" destination="zou-fw-IVR" id="QuK-yo-GZP"/>
+                        <outlet property="labelsView" destination="zou-fw-IVR" id="N3m-Mc-kbW"/>
                         <outlet property="sellButton" destination="bo3-Fv-Vc2" id="iqV-oP-Ztx"/>
                         <outlet property="sellLabel" destination="gZw-DG-GdH" id="ze9-VJ-gWl"/>
                         <outlet property="variationLabel" destination="Rfi-VX-oG4" id="9rt-Ny-wIy"/>
@@ -221,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLf-5m-yq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638.7850467289718" y="29.805615550755942"/>
+            <point key="canvasLocation" x="1675" y="30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ih-q5-Iyx">
@@ -231,6 +232,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ucd-Sj-sUq">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
