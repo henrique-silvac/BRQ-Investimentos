@@ -16,16 +16,19 @@ class HomeTableViewController: UITableViewController {
     var currencies: [Currency] = []
     var timer: Timer?
     
+    let user = User()
     let cellSpacingHeight: CGFloat = 24
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         fetchData()
+        
         timer = Timer.scheduledTimer(withTimeInterval: 216, repeats: true) { [weak self] _ in
             self?.fetchData()
         }
@@ -57,9 +60,18 @@ class HomeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? HomeTableViewCell else { fatalError() }
         
         settingLabels(cell, for: indexPath)
-        cell.cellView.setBorderView()
+        cell.labelsView.setBorderView()
         
         return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cambioVC = storyboard?.instantiateViewController(identifier: "CambioViewController") as? CambioViewController {
+            cambioVC.currencySelected = currencies[indexPath.section]
+            cambioVC.user = user
+            navigationController?.pushViewController(cambioVC, animated: true)
+        }
     }
     
     //MARK: - Creating a Cell

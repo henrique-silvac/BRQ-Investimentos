@@ -62,7 +62,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="ISOLabel" destination="4Gr-pI-rR0" id="SfH-Ub-vGx"/>
-                                    <outlet property="cellView" destination="2Xd-Oy-UEg" id="Ry5-NN-2xO"/>
+                                    <outlet property="labelsView" destination="2Xd-Oy-UEg" id="3ua-WQ-A18"/>
                                     <outlet property="variationLabel" destination="daA-zR-6IL" id="Bmx-tp-Jco"/>
                                 </connections>
                             </tableViewCell>
@@ -81,7 +81,7 @@
         <!--Cambio View Controller-->
         <scene sceneID="L54-fh-FEy">
             <objects>
-                <viewController id="9dh-yA-Qy9" customClass="CambioViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CambioViewController" id="9dh-yA-Qy9" customClass="CambioViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zuW-in-GBb">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@
                                     <constraint firstItem="Rfi-VX-oG4" firstAttribute="top" secondItem="Wix-Mi-zxp" secondAttribute="bottom" constant="14" id="pQV-aH-VhX"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWf-zX-eVc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWf-zX-eVc" customClass="UICustomButton" customModule="BRQ_Investimentos" customModuleProvider="target">
                                 <rect key="frame" x="260" y="811" width="144" height="41"/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.55294117649999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -149,7 +149,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo3-Fv-Vc2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo3-Fv-Vc2" customClass="UICustomButton" customModule="BRQ_Investimentos" customModuleProvider="target">
                                 <rect key="frame" x="24" y="811" width="144" height="41"/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.55294117649999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -158,11 +158,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Vender"/>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="358-ce-8Fh" userLabel="View 3" customClass="UICustomView" customModule="BRQ_Investimentos" customModuleProvider="target" colorLabel="IBBuiltInLabel-Yellow">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="358-ce-8Fh" userLabel="View 2" customClass="UICustomView" customModule="BRQ_Investimentos" customModuleProvider="target" colorLabel="IBBuiltInLabel-Orange">
                                 <rect key="frame" x="24" y="388" width="380" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantidade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oca-Lk-Em4">
-                                        <rect key="frame" x="16" y="16" width="348" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quantidade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oca-Lk-Em4">
+                                        <rect key="frame" x="16" y="15" width="348" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -205,6 +205,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ia1-bW-dfP"/>
+                    <connections>
+                        <outlet property="ISOLabel" destination="Wix-Mi-zxp" id="jpW-7c-HBR"/>
+                        <outlet property="amountLabel" destination="oca-Lk-Em4" id="wHp-WB-x7s"/>
+                        <outlet property="amountView" destination="358-ce-8Fh" id="UkT-Pk-IZ2"/>
+                        <outlet property="balanceLabel" destination="ZwP-6b-Vpl" id="LKR-EM-tbs"/>
+                        <outlet property="buyButton" destination="DWf-zX-eVc" id="bp8-2s-Fww"/>
+                        <outlet property="buyLabel" destination="FLe-Np-3fr" id="IpS-k8-RfY"/>
+                        <outlet property="cashLabel" destination="RYh-1Y-dOi" id="lyS-en-5n2"/>
+                        <outlet property="labelsView" destination="zou-fw-IVR" id="QuK-yo-GZP"/>
+                        <outlet property="sellButton" destination="bo3-Fv-Vc2" id="iqV-oP-Ztx"/>
+                        <outlet property="sellLabel" destination="gZw-DG-GdH" id="ze9-VJ-gWl"/>
+                        <outlet property="variationLabel" destination="Rfi-VX-oG4" id="9rt-Ny-wIy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLf-5m-yq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
