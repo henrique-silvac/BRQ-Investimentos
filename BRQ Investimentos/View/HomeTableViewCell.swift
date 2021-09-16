@@ -9,6 +9,8 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
+    //MARK: - IBOutlets
+    
     @IBOutlet var labelsView: UICustomView!
     
     @IBOutlet var ISOLabel: UILabel!

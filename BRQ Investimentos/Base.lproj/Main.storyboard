@@ -159,25 +159,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Vender"/>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="358-ce-8Fh" userLabel="View 2" customClass="UICustomView" customModule="BRQ_Investimentos" customModuleProvider="target" colorLabel="IBBuiltInLabel-Orange">
-                                <rect key="frame" x="24" y="388" width="380" height="53"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantidade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oca-Lk-Em4">
-                                        <rect key="frame" x="16" y="15" width="348" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantidade" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="lHU-zm-6ng">
+                                <rect key="frame" x="24" y="388" width="380" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="oca-Lk-Em4" secondAttribute="trailing" constant="16" id="6UO-fk-hLm"/>
-                                    <constraint firstAttribute="bottom" secondItem="oca-Lk-Em4" secondAttribute="bottom" constant="16" id="E3d-Pv-bjm"/>
-                                    <constraint firstItem="oca-Lk-Em4" firstAttribute="leading" secondItem="358-ce-8Fh" secondAttribute="leading" constant="16" id="TUI-W8-nWM"/>
-                                    <constraint firstItem="oca-Lk-Em4" firstAttribute="top" secondItem="358-ce-8Fh" secondAttribute="top" constant="15" id="VwU-az-fhq"/>
-                                    <constraint firstAttribute="width" secondItem="358-ce-8Fh" secondAttribute="height" multiplier="380:53" id="d9d-bl-RMw"/>
+                                    <constraint firstAttribute="width" secondItem="lHU-zm-6ng" secondAttribute="height" multiplier="190:17" id="mD0-6y-FNx"/>
                                 </constraints>
-                            </view>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7rl-oh-W1d"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,30 +176,30 @@
                             <constraint firstItem="RYh-1Y-dOi" firstAttribute="top" secondItem="ZwP-6b-Vpl" secondAttribute="bottom" constant="24" id="0Fe-5w-ctL"/>
                             <constraint firstItem="7rl-oh-W1d" firstAttribute="bottom" secondItem="bo3-Fv-Vc2" secondAttribute="bottom" constant="40" id="0sE-Cb-J91"/>
                             <constraint firstItem="DWf-zX-eVc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bo3-Fv-Vc2" secondAttribute="trailing" constant="25" id="1SY-2z-tjg"/>
-                            <constraint firstItem="358-ce-8Fh" firstAttribute="top" secondItem="RYh-1Y-dOi" secondAttribute="bottom" constant="32" id="7Ep-Uh-jDc"/>
-                            <constraint firstItem="358-ce-8Fh" firstAttribute="leading" secondItem="7rl-oh-W1d" secondAttribute="leading" constant="24" id="7LQ-9j-DjW"/>
+                            <constraint firstItem="lHU-zm-6ng" firstAttribute="centerX" secondItem="zuW-in-GBb" secondAttribute="centerX" id="3z1-1L-Lxc"/>
                             <constraint firstAttribute="trailing" secondItem="DWf-zX-eVc" secondAttribute="trailing" constant="24" id="Akk-Z6-7bq"/>
                             <constraint firstItem="zou-fw-IVR" firstAttribute="centerX" secondItem="zuW-in-GBb" secondAttribute="centerX" id="BFj-2t-8Kc"/>
                             <constraint firstItem="zou-fw-IVR" firstAttribute="leading" secondItem="7rl-oh-W1d" secondAttribute="leading" constant="24" id="F4g-Uw-5zL"/>
                             <constraint firstItem="RYh-1Y-dOi" firstAttribute="leading" secondItem="7rl-oh-W1d" secondAttribute="leading" constant="24" id="Hrd-QI-wqm"/>
                             <constraint firstItem="ZwP-6b-Vpl" firstAttribute="top" secondItem="zou-fw-IVR" secondAttribute="bottom" constant="32" id="JaK-MQ-7Dg"/>
                             <constraint firstItem="7rl-oh-W1d" firstAttribute="trailing" secondItem="ZwP-6b-Vpl" secondAttribute="trailing" constant="24" id="PTM-SS-Jh4"/>
-                            <constraint firstItem="7rl-oh-W1d" firstAttribute="trailing" secondItem="358-ce-8Fh" secondAttribute="trailing" constant="24" id="U37-I8-GOp"/>
+                            <constraint firstItem="7rl-oh-W1d" firstAttribute="trailing" secondItem="lHU-zm-6ng" secondAttribute="trailing" constant="24" id="SV9-Ia-Alm"/>
                             <constraint firstItem="ZwP-6b-Vpl" firstAttribute="centerX" secondItem="zuW-in-GBb" secondAttribute="centerX" id="WyR-Es-y3z"/>
                             <constraint firstItem="bo3-Fv-Vc2" firstAttribute="leading" secondItem="7rl-oh-W1d" secondAttribute="leading" constant="24" id="Xr4-7j-zLT"/>
                             <constraint firstItem="ZwP-6b-Vpl" firstAttribute="leading" secondItem="7rl-oh-W1d" secondAttribute="leading" constant="24" id="dwm-HG-XeW"/>
                             <constraint firstItem="7rl-oh-W1d" firstAttribute="trailing" secondItem="RYh-1Y-dOi" secondAttribute="trailing" constant="24" id="igX-IW-n5P"/>
+                            <constraint firstItem="lHU-zm-6ng" firstAttribute="top" secondItem="RYh-1Y-dOi" secondAttribute="bottom" constant="32" id="kOh-k5-dE0"/>
                             <constraint firstItem="7rl-oh-W1d" firstAttribute="bottom" secondItem="DWf-zX-eVc" secondAttribute="bottom" constant="40" id="kki-cZ-zta"/>
                             <constraint firstItem="zou-fw-IVR" firstAttribute="top" secondItem="zuW-in-GBb" secondAttribute="topMargin" constant="24" id="poA-CI-1No"/>
                             <constraint firstItem="7rl-oh-W1d" firstAttribute="trailing" secondItem="zou-fw-IVR" secondAttribute="trailing" constant="24" id="sOd-Gd-VX4"/>
                             <constraint firstItem="RYh-1Y-dOi" firstAttribute="centerX" secondItem="zuW-in-GBb" secondAttribute="centerX" id="vQo-qZ-K6n"/>
+                            <constraint firstItem="lHU-zm-6ng" firstAttribute="leading" secondItem="7rl-oh-W1d" secondAttribute="leading" constant="24" id="wHV-Mb-3Gs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Câmbio" id="Ia1-bW-dfP"/>
                     <connections>
                         <outlet property="ISOLabel" destination="Wix-Mi-zxp" id="jpW-7c-HBR"/>
-                        <outlet property="amountLabel" destination="oca-Lk-Em4" id="wHp-WB-x7s"/>
-                        <outlet property="amountView" destination="358-ce-8Fh" id="dKY-zb-C15"/>
+                        <outlet property="amountTextField" destination="lHU-zm-6ng" id="nuh-76-8pu"/>
                         <outlet property="balanceLabel" destination="ZwP-6b-Vpl" id="LKR-EM-tbs"/>
                         <outlet property="buyButton" destination="DWf-zX-eVc" id="bp8-2s-Fww"/>
                         <outlet property="buyLabel" destination="FLe-Np-3fr" id="IpS-k8-RfY"/>
@@ -221,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLf-5m-yq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675" y="30"/>
+            <point key="canvasLocation" x="1673.8317757009345" y="29.805615550755942"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ih-q5-Iyx">
