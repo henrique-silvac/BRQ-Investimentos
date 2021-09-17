@@ -21,7 +21,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var balanceLabel: UILabel!
     @IBOutlet var cashLabel: UILabel!
     
-    @IBOutlet var amountTextField: UITextField! {
+    @IBOutlet var amountTextField: UICustomTextField! {
         didSet {
                 amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
             }
@@ -47,15 +47,13 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         sellButton.settingButton()
         buyButton.settingButton()
         
-        amountTextField.layer.cornerRadius = 15
-        amountTextField.layer.borderWidth = 1
-        amountTextField.layer.borderColor = UIColor.white.cgColor
+        amountTextField.setBorderTextField()
         amountTextField.attributedPlaceholder =
             NSAttributedString(string: "Quantidade", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
     }
     
-    //MARK: - Detail labels
+    //MARK: - Cambio labels
     
     func settingLabels() {
         guard let currency = currencySelected else { return }
@@ -64,9 +62,9 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         ISOLabel.text = currency.name
         variationLabel.text = currency.variationString
         if currency.variation > 0 {
-            variationLabel.textColor = UIColor(red: 122, green: 198, blue: 79, alpha: 1)
+            variationLabel.textColor = UIColor.green
         } else if currency.variation < 0 {
-            variationLabel.textColor = UIColor(red: 208, green: 2, blue: 27, alpha: 1)
+            variationLabel.textColor = UIColor.red
         } else {
             variationLabel.textColor = UIColor.white
         }
@@ -76,11 +74,6 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         
         balanceLabel.text = ("0 \(currency.name) em caixa")
         cashLabel.text = ("Saldo disponível: \(user.balanceLabel)")
-    }
-    
-    @objc func doneButtonTappedForMyNumericTextField() {
-        print("Done");
-        amountTextField.resignFirstResponder()
     }
     
     //MARK: - Create Buttons
@@ -96,6 +89,13 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
             user.balance -= 10
         }
         settingLabels()
+        
+    }
+    
+    //MARK: - Selectors
+
+    @objc func doneButtonTappedForMyNumericTextField() {
+        amountTextField.resignFirstResponder()
         
     }
 
@@ -120,7 +120,6 @@ extension UITextField {
         self.inputAccessoryView = toolbar
     }
 
-    // Default actions:
     @objc func doneButtonTapped() { self.resignFirstResponder() }
     @objc func cancelButtonTapped() { self.resignFirstResponder() }
 }
