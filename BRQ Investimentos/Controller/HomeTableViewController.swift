@@ -67,7 +67,7 @@ class HomeTableViewController: UITableViewController {
 
     }
         
-    //MARK: - Creating a Cell
+    //MARK: - Creating Cell
     
     func settingLabels(_ cell: HomeTableViewCell, for indexPath: IndexPath) {
         let currency = currencies[indexPath.section]

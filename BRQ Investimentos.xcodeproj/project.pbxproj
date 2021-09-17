@@ -17,6 +17,7 @@
 		0B13388F26EBCB7500C0255D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13388E26EBCB7500C0255D /* HomeTableViewCell.swift */; };
 		0B1580F726F23D3000E58565 /* UICustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1580F626F23D3000E58565 /* UICustomView.swift */; };
 		0B15810526F24FD600E58565 /* FinanceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15810426F24FD600E58565 /* FinanceData.swift */; };
+		0B191D7F26F4EA79008C1717 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B191D7E26F4EA79008C1717 /* UICustomTextField.swift */; };
 		0BCB18B226EFA4E300F7F988 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB18B126EFA4E300F7F988 /* Service.swift */; };
 		0BDC403726F391900049F77D /* UICustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC403626F391900049F77D /* UICustomButton.swift */; };
 		0BDC403A26F392C30049F77D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC403926F392C30049F77D /* User.swift */; };
@@ -35,6 +36,7 @@
 		0B13388E26EBCB7500C0255D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0B1580F626F23D3000E58565 /* UICustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomView.swift; sourceTree = "<group>"; };
 		0B15810426F24FD600E58565 /* FinanceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceData.swift; sourceTree = "<group>"; };
+		0B191D7E26F4EA79008C1717 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
 		0BCB18B126EFA4E300F7F988 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		0BDC403626F391900049F77D /* UICustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomButton.swift; sourceTree = "<group>"; };
 		0BDC403926F392C30049F77D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				0B1580F626F23D3000E58565 /* UICustomView.swift */,
 				0BDC403626F391900049F77D /* UICustomButton.swift */,
+				0B191D7E26F4EA79008C1717 /* UICustomTextField.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BDC403726F391900049F77D /* UICustomButton.swift in Sources */,
+				0B191D7F26F4EA79008C1717 /* UICustomTextField.swift in Sources */,
 				0B004F9D26F125A700863B14 /* CambioViewController.swift in Sources */,
 				0B15810526F24FD600E58565 /* FinanceData.swift in Sources */,
 				0B1580F726F23D3000E58565 /* UICustomView.swift in Sources */,
