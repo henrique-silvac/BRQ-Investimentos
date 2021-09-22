@@ -22,7 +22,7 @@ class User {
         if let result = formatter.string(from: NSNumber(value: balance)) {
             return result
         }
-        return "R$0.00"
+        return "R$ 0.00"
     }
     
     init() {

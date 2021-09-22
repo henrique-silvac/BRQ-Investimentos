@@ -19,11 +19,18 @@ class HomeTableViewController: UITableViewController {
     
     let user = User()
     
+    var timer: Timer?
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Home"
+        
         fetchData()
+        timer = Timer.scheduledTimer(withTimeInterval: 216, repeats: true) { [weak self] _ in
+            self?.fetchData()
+        }
         
     }
     
