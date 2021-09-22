@@ -69,9 +69,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
     
     var currencySelected: Currency?
-    
     var currencyISO = String()
-    
     var user: User?
     
     //MARK: - Lifecycle
@@ -157,9 +155,9 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        if (stringInputAmount.isEmpty || userInput == 0) {
-            button.disable()
-        }
+//        if (stringInputAmount.isEmpty || userInput == 0) {
+//            button.disable()
+//        }
     }
     
     //MARK: - Selectors

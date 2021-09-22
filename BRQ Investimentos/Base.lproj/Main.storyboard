@@ -135,7 +135,7 @@
                                     <constraint firstItem="Rfi-VX-oG4" firstAttribute="top" secondItem="Wix-Mi-zxp" secondAttribute="bottom" constant="14" id="pQV-aH-VhX"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWf-zX-eVc" customClass="UICustomButton" customModule="BRQ_Investimentos" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWf-zX-eVc" customClass="UICustomButton" customModule="BRQ_Investimentos" customModuleProvider="target">
                                 <rect key="frame" x="260" y="811" width="144" height="41"/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.55294117649999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
