@@ -11,9 +11,9 @@ class User {
     
     let defaultAPICurrencies = ["USD", "EUR", "GBP", "ARS", "AUD", "BTC", "CAD", "CNY", "JPY"]
     
-    var balance: Double
-    
     var userWallet: [String: Int]
+    
+    var balance: Double
     
     var balanceLabel: String {
         let formatter = NumberFormatter()
@@ -22,7 +22,7 @@ class User {
         if let result = formatter.string(from: NSNumber(value: balance)) {
             return result
         }
-        return "R$0.00"
+        return "R$ 0.00"
     }
     
     init() {
@@ -57,4 +57,5 @@ class User {
             balance -= price
         }
     }
+    
 }

@@ -21,7 +21,7 @@ struct Currencies: Codable {
 }
 
 struct Currency: Codable {
-
+    
     let name: String
     let buy: Double?
     let sell: Double?
@@ -39,7 +39,7 @@ struct Currency: Codable {
                 return result
             }
         }
-        return "R$0.00"
+        return "R$ 0.00"
     }
     
     var sellString: String {
@@ -50,7 +50,7 @@ struct Currency: Codable {
                 return result
             }
         }
-        return "R$0.00"
+        return "R$ 0.00"
     }
     
     func setFormatter() -> NumberFormatter {

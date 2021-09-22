@@ -23,8 +23,8 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var amountTextField: UICustomTextField! {
         didSet {
-                amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTapped)))
-            }
+            amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTapped)))
+        }
     }
     
     @IBOutlet var sellButton: UICustomButton!
@@ -35,18 +35,17 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         guard let currency = currencySelected else { return }
         guard let stringInputAmount = amountTextField.text else { return }
         guard let intInputAmount = Int(stringInputAmount) else { return }
-        guard let vendaVC = storyboard?.instantiateViewController(identifier: "VendaViewController") as? VendaViewController else { return }
+        guard let sellVC = storyboard?.instantiateViewController(identifier: "VendaViewController") as? VendaViewController else { return }
         
         var message: String?
         
         if sender.tag == 0 {
-            //sell button
             user.sell(quantity: intInputAmount, currencyISO, currency)
             message = "Parabéns! Você acabou de vender \(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
         }
         
-        vendaVC.message = message
-        navigationController?.popToRootViewController(animated: true)
+        sellVC.message = message
+        navigationController?.pushViewController(sellVC, animated: true)
         
     }
     
@@ -55,29 +54,26 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         guard let currency = currencySelected else { return }
         guard let stringInputAmount = amountTextField.text else { return }
         guard let intInputAmount = Int(stringInputAmount) else { return }
-        guard let compraVC = storyboard?.instantiateViewController(identifier: "CompraViewController") as? CompraViewController else { return }
+        guard let buyVC = storyboard?.instantiateViewController(identifier: "CompraViewController") as? CompraViewController else { return }
         
         var message: String?
         
-        //buy button
         user.buy(quantity: intInputAmount, currencyISO, currency)
         message = "Parabéns! Você acabou de comprar \(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
         
-        compraVC.message = message
-        navigationController?.popToRootViewController(animated: true)
-    
-}
+        buyVC.message = message
+        navigationController?.pushViewController(buyVC, animated: true)
+        
+    }
     
     //MARK: - Properties
-
+    
     var currencySelected: Currency?
-    
     var currencyISO = String()
-    
     var user: User?
     
     //MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Câmbio"
@@ -98,7 +94,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //MARK: - Cambio labels
+    //MARK: - Setting labels
     
     func settingLabels() {
         guard let currency = currencySelected else { return }
@@ -159,13 +155,13 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        if (stringInputAmount.isEmpty || userInput == 0) {
-            button.disable()
-        }
+//        if (stringInputAmount.isEmpty || userInput == 0) {
+//            button.disable()
+//        }
     }
     
     //MARK: - Selectors
-
+    
     @objc func doneButtonTapped() {
         amountTextField.resignFirstResponder()
         
@@ -179,7 +175,7 @@ extension UITextField {
     func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
         let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
         let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
-
+        
         let toolbar: UIToolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.items = [
@@ -188,10 +184,10 @@ extension UITextField {
             UIBarButtonItem(title: "Done", style: .done, target: onDone.target, action: onDone.action)
         ]
         toolbar.sizeToFit()
-
+        
         self.inputAccessoryView = toolbar
     }
-
+    
     @objc func doneButtonTapped() { self.resignFirstResponder() }
     @objc func cancelButtonTapped() { self.resignFirstResponder() }
 }
