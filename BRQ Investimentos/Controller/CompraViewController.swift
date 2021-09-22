@@ -13,9 +13,11 @@ class CompraViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var homeButton: UICustomButton!
-//    @IBAction func homeButtonPressed(_ sender: UICustomButton) {
-//        navigationController?.popToRootViewController(animated: true)
-//    }
+    
+    @IBAction func homeButtonTapped(_ sender: UICustomButton) {
+        navigationController?.popToRootViewController(animated: true)
+        
+    }
     
     //MARK: - Properties
     
@@ -26,6 +28,9 @@ class CompraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Compra"
+        guard let message = message else { return }
+        textLabel.text = message
+        homeButton.settingButton()
         
     }
     

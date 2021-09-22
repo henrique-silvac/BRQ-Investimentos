@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +35,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daA-zR-6IL">
                                                     <rect key="frame" x="318.33333333333331" y="21" width="45.666666666666686" height="59"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.47843137254901957" green="0.7777419686" blue="0.30799207090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -144,6 +143,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="COMPRAR"/>
+                                <connections>
+                                    <action selector="buyButtonTapped:" destination="9dh-yA-Qy9" eventType="touchUpInside" id="KZj-yG-5iX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo disponível: R$ 0,0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwP-6b-Vpl">
                                 <rect key="frame" x="24" y="274" width="380" height="29"/>
@@ -159,6 +161,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="VENDER"/>
+                                <connections>
+                                    <action selector="sellButtonTapped:" destination="9dh-yA-Qy9" eventType="touchUpInside" id="ZkI-Fj-m8b"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantidade" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="lHU-zm-6ng" customClass="UICustomTextField" customModule="BRQ_Investimentos" customModuleProvider="target">
                                 <rect key="frame" x="24" y="388" width="380" height="34"/>
@@ -203,7 +208,7 @@
                         <outlet property="ISOLabel" destination="Wix-Mi-zxp" id="jpW-7c-HBR"/>
                         <outlet property="amountTextField" destination="lHU-zm-6ng" id="nuh-76-8pu"/>
                         <outlet property="balanceLabel" destination="ZwP-6b-Vpl" id="LKR-EM-tbs"/>
-                        <outlet property="buyButton" destination="DWf-zX-eVc" id="bp8-2s-Fww"/>
+                        <outlet property="buyButton" destination="bo3-Fv-Vc2" id="sPL-Y6-LQx"/>
                         <outlet property="buyLabel" destination="FLe-Np-3fr" id="IpS-k8-RfY"/>
                         <outlet property="cashLabel" destination="RYh-1Y-dOi" id="lyS-en-5n2"/>
                         <outlet property="labelsView" destination="zou-fw-IVR" id="N3m-Mc-kbW"/>
@@ -219,7 +224,7 @@
         <!--Compra View Controller-->
         <scene sceneID="nGl-vD-sfZ">
             <objects>
-                <viewController id="JBH-dr-gbc" customClass="CompraViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompraViewController" id="JBH-dr-gbc" customClass="CompraViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQr-Qm-lza">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +239,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NyR-go-pYZ" secondAttribute="trailing" id="YTO-CV-LXc"/>
                                     <constraint firstItem="NyR-go-pYZ" firstAttribute="leading" secondItem="Wka-OC-P0c" secondAttribute="leading" id="fqf-zK-BFK"/>
@@ -242,7 +247,7 @@
                                     <constraint firstItem="NyR-go-pYZ" firstAttribute="top" secondItem="Wka-OC-P0c" secondAttribute="top" id="xYN-Rh-IC9"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P10-zu-nAo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P10-zu-nAo" customClass="UICustomButton" customModule="BRQ_Investimentos" customModuleProvider="target">
                                 <rect key="frame" x="142" y="811" width="144" height="41"/>
                                 <color key="backgroundColor" red="0.23529411764705882" green="0.55294117647058827" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -252,6 +257,9 @@
                                 <state key="normal" title="HOME">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="homeButtonTapped:" destination="JBH-dr-gbc" eventType="touchUpInside" id="GyS-7C-0VS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zci-am-EPS"/>
@@ -302,7 +310,7 @@
         <!--Venda View Controller-->
         <scene sceneID="3q4-Fu-Cpm">
             <objects>
-                <viewController id="Boi-dc-f3f" customClass="VendaViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VendaViewController" id="Boi-dc-f3f" customClass="VendaViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TpZ-E9-a2B">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,7 +325,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ROR-ya-Ag2" secondAttribute="trailing" id="5mP-eJ-f3Y"/>
                                     <constraint firstAttribute="bottom" secondItem="ROR-ya-Ag2" secondAttribute="bottom" constant="20" id="Dc5-1B-Y2z"/>
@@ -325,7 +333,7 @@
                                     <constraint firstItem="ROR-ya-Ag2" firstAttribute="top" secondItem="shN-U3-qvv" secondAttribute="top" id="eVW-aC-j80"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCr-SC-ZBS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCr-SC-ZBS" customClass="UICustomButton" customModule="BRQ_Investimentos" customModuleProvider="target">
                                 <rect key="frame" x="142" y="811" width="144" height="41"/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.55294117649999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -335,6 +343,9 @@
                                 <state key="normal" title="HOME">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="homeButtonTapped:" destination="Boi-dc-f3f" eventType="touchUpInside" id="0nJ-8u-GV5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kCp-sR-rtN"/>
@@ -359,9 +370,4 @@
             <point key="canvasLocation" x="2435" y="359"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
