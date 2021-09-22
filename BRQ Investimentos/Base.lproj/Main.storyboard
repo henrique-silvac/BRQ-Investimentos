@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="1673.8317757009345" y="29.805615550755942"/>
         </scene>
-        <!--View Controller-->
+        <!--Compra View Controller-->
         <scene sceneID="nGl-vD-sfZ">
             <objects>
-                <viewController id="JBH-dr-gbc" sceneMemberID="viewController">
+                <viewController id="JBH-dr-gbc" customClass="CompraViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQr-Qm-lza">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +266,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="plu-fu-UB3"/>
+                    <connections>
+                        <outlet property="homeButton" destination="P10-zu-nAo" id="9Lw-bG-kNv"/>
+                        <outlet property="textLabel" destination="NyR-go-pYZ" id="ORi-Bs-rdK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaW-kb-Sp0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,10 +299,10 @@
             </objects>
             <point key="canvasLocation" x="215.8878504672897" y="30.45356371490281"/>
         </scene>
-        <!--View Controller-->
+        <!--Venda View Controller-->
         <scene sceneID="3q4-Fu-Cpm">
             <objects>
-                <viewController id="Boi-dc-f3f" sceneMemberID="viewController">
+                <viewController id="Boi-dc-f3f" customClass="VendaViewController" customModule="BRQ_Investimentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TpZ-E9-a2B">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,6 +349,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="waI-Y2-5Po"/>
+                    <connections>
+                        <outlet property="homeButton" destination="aCr-SC-ZBS" id="0g1-X9-gcS"/>
+                        <outlet property="textLabel" destination="ROR-ya-Ag2" id="h16-uT-bKj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZ9-c7-YxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

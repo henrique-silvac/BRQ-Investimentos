@@ -16,13 +16,13 @@ class HomeTableViewController: UITableViewController {
     var currencies: [Currency] = []
     
     let cellSpacingHeight: CGFloat = 24
+    
     let user = User()
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchData()
         
     }

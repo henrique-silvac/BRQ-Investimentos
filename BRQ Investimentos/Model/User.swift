@@ -8,7 +8,12 @@
 import UIKit
 
 class User {
+    
+    let defaultAPICurrencies = ["USD", "EUR", "GBP", "ARS", "AUD", "BTC", "CAD", "CNY", "JPY"]
+    
     var balance: Double
+    
+    var userWallet: [String: Int]
     
     var balanceLabel: String {
         let formatter = NumberFormatter()
@@ -22,5 +27,10 @@ class User {
     
     init() {
         self.balance = 1000
+        var wallet = [String: Int]()
+        for iso in defaultAPICurrencies {
+            wallet[iso] = 0
+        }
+        self.userWallet = wallet
     }
 }

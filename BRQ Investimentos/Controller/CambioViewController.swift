@@ -9,7 +9,7 @@ import UIKit
 
 class CambioViewController: UIViewController, UITextFieldDelegate {
     
-    //MARK: - IBOutlets
+    //MARK: - @IBOutlets
     
     @IBOutlet var labelsView: UICustomView!
     
@@ -33,6 +33,9 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
 
     var currencySelected: Currency?
+    
+    var currencyISO = String()
+    
     var user: User?
     
     //MARK: - Lifecycle
@@ -58,6 +61,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     func settingLabels() {
         guard let currency = currencySelected else { return }
         guard let user = user else { return }
+        guard let userCurrencyAmount = user.userWallet[currencyISO] else { return }
         
         ISOLabel.text = currency.name
         variationLabel.text = currency.variationString
@@ -72,7 +76,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         buyLabel.text = ("Compra: " + currency.buyString)
         sellLabel.text = ("Venda: " + currency.sellString)
         
-        balanceLabel.text = ("0 \(currency.name) em caixa")
+        balanceLabel.text = ("\(userCurrencyAmount) \(currencyISO) em caixa")
         cashLabel.text = ("Saldo disponível: \(user.balanceLabel)")
     }
     
