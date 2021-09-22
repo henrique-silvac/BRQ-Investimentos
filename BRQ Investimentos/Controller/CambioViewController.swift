@@ -41,7 +41,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         
         if sender.tag == 0 {
             user.sell(quantity: intInputAmount, currencyISO, currency)
-            message = "Parabéns! Você acabou de vender \(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
+            message = "Parabéns!\nVocê acabou de vender\n\(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
         }
         
         sellVC.message = message
@@ -59,7 +59,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         var message: String?
         
         user.buy(quantity: intInputAmount, currencyISO, currency)
-        message = "Parabéns! Você acabou de comprar \(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
+        message = "Parabéns!\nVocê acabou de comprar\n\(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
         
         buyVC.message = message
         navigationController?.pushViewController(buyVC, animated: true)
@@ -129,14 +129,14 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     func buttonSettings(_ button: UICustomButton, _ user: User, _ currency: Currency, iso: String) {
         guard let currencyBuyPrice = currency.buy else { return }
         guard let currencyWallet = user.userWallet[iso] else { return }
-        guard let stringInputAmount = amountTextField.text else { return }
+        guard let amountStringInput = amountTextField.text else { return }
         
         var totalPrice = Double()
         var userInput = Int()
         
-        if let intInputAmount = Int(stringInputAmount) {
-            userInput = intInputAmount
-            totalPrice = currencyBuyPrice * Double(intInputAmount)
+        if let amountIntInput = Int(amountStringInput) {
+            userInput = amountIntInput
+            totalPrice = currencyBuyPrice * Double(amountIntInput)
         }
         
         if button.tag == 1 {
@@ -155,9 +155,10 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-//        if (stringInputAmount.isEmpty || userInput == 0) {
-//            button.disable()
-//        }
+        if (amountStringInput.isEmpty || userInput == 0) {
+            button.disable()
+        }
+        
     }
     
     //MARK: - Selectors
