@@ -16,13 +16,13 @@ class HomeTableViewController: UITableViewController {
     var currencies: [Currency] = []
     
     let cellSpacingHeight: CGFloat = 24
+    
     let user = User()
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchData()
         
     }
@@ -48,7 +48,6 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? HomeTableViewCell else { fatalError() }
         
         settingLabels(cell, for: indexPath)
@@ -62,6 +61,9 @@ class HomeTableViewController: UITableViewController {
         if let cambioVC = storyboard?.instantiateViewController(identifier: "CambioViewController") as? CambioViewController {
             cambioVC.currencySelected = currencies[indexPath.section]
             cambioVC.user = user
+            guard let cell = tableView.cellForRow(at: indexPath) as? HomeTableViewCell else { return }
+            guard let currencyISO = cell.ISOLabel.text else { return }
+            cambioVC.currencyISO = currencyISO
             navigationController?.pushViewController(cambioVC, animated: true)
         }
 

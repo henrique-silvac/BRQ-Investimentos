@@ -9,7 +9,7 @@ import UIKit
 
 class CambioViewController: UIViewController, UITextFieldDelegate {
     
-    //MARK: - IBOutlets
+    //MARK: - @IBOutlets
     
     @IBOutlet var labelsView: UICustomView!
     
@@ -23,23 +23,63 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var amountTextField: UICustomTextField! {
         didSet {
-                amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+                amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTapped)))
             }
     }
     
     @IBOutlet var sellButton: UICustomButton!
     @IBOutlet var buyButton: UICustomButton!
     
+    @IBAction func sellButtonTapped(_ sender: UICustomButton) {
+        guard let user = user else { return }
+        guard let currency = currencySelected else { return }
+        guard let stringInputAmount = amountTextField.text else { return }
+        guard let intInputAmount = Int(stringInputAmount) else { return }
+        guard let vendaVC = storyboard?.instantiateViewController(identifier: "VendaViewController") as? VendaViewController else { return }
+        
+        var message: String?
+        
+        if sender.tag == 0 {
+            //sell button
+            user.sell(quantity: intInputAmount, currencyISO, currency)
+            message = "Parabéns! Você acabou de vender \(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
+        }
+        
+        vendaVC.message = message
+        navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
+    @IBAction func buyButtonTapped(_ sender: UICustomButton) {
+        guard let user = user else { return }
+        guard let currency = currencySelected else { return }
+        guard let stringInputAmount = amountTextField.text else { return }
+        guard let intInputAmount = Int(stringInputAmount) else { return }
+        guard let compraVC = storyboard?.instantiateViewController(identifier: "CompraViewController") as? CompraViewController else { return }
+        
+        var message: String?
+        
+        //buy button
+        user.buy(quantity: intInputAmount, currencyISO, currency)
+        message = "Parabéns! Você acabou de comprar \(intInputAmount) \(currencyISO) - \(currency.name), totalizando \(user.balanceLabel)"
+        
+        compraVC.message = message
+        navigationController?.popToRootViewController(animated: true)
+    
+}
+    
     //MARK: - Properties
 
     var currencySelected: Currency?
+    
+    var currencyISO = String()
+    
     var user: User?
     
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Câmbio"
         
         settingLabels()
@@ -53,11 +93,17 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        settingLabels()
+        
+    }
+    
     //MARK: - Cambio labels
     
     func settingLabels() {
         guard let currency = currencySelected else { return }
         guard let user = user else { return }
+        guard let userCurrencyAmount = user.userWallet[currencyISO] else { return }
         
         ISOLabel.text = currency.name
         variationLabel.text = currency.variationString
@@ -72,33 +118,59 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         buyLabel.text = ("Compra: " + currency.buyString)
         sellLabel.text = ("Venda: " + currency.sellString)
         
-        balanceLabel.text = ("0 \(currency.name) em caixa")
+        balanceLabel.text = ("\(userCurrencyAmount) \(currencyISO) em caixa")
         cashLabel.text = ("Saldo disponível: \(user.balanceLabel)")
+        
+        buttonSettings(buyButton, user, currency, iso: currencyISO)
+        buttonSettings(sellButton, user, currency, iso: currencyISO)
+        
+        amountTextField.text = ""
+        
     }
     
     //MARK: - Create Buttons
     
-    func ButtonPressed(_ sender: UICustomButton) {
-        guard let user = user else { return }
+    func buttonSettings(_ button: UICustomButton, _ user: User, _ currency: Currency, iso: String) {
+        guard let currencyBuyPrice = currency.buy else { return }
+        guard let currencyWallet = user.userWallet[iso] else { return }
+        guard let stringInputAmount = amountTextField.text else { return }
         
-        if sender.tag == 0 {
-            //sell button
-            user.balance += 10
-        } else {
-            //buy button
-            user.balance -= 10
+        var totalPrice = Double()
+        var userInput = Int()
+        
+        if let intInputAmount = Int(stringInputAmount) {
+            userInput = intInputAmount
+            totalPrice = currencyBuyPrice * Double(intInputAmount)
         }
-        settingLabels()
         
+        if button.tag == 1 {
+            // buy button
+            if (user.balance < currencyBuyPrice || user.balance < totalPrice) {
+                button.disable()
+            } else {
+                button.enable()
+            }
+        } else {
+            // sell button
+            if (userInput > currencyWallet || currency.sell == nil || currencyWallet == 0) {
+                button.disable()
+            } else {
+                button.enable()
+            }
+        }
+        
+        if (stringInputAmount.isEmpty || userInput == 0) {
+            button.disable()
+        }
     }
     
     //MARK: - Selectors
 
-    @objc func doneButtonTappedForMyNumericTextField() {
+    @objc func doneButtonTapped() {
         amountTextField.resignFirstResponder()
         
     }
-
+    
 }
 
 //MARK: - Extensions
