@@ -21,7 +21,7 @@ struct Currencies: Codable {
 }
 
 struct Currency: Codable {
-
+    
     let name: String
     let buy: Double?
     let sell: Double?

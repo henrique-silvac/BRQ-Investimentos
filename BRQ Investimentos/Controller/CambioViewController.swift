@@ -23,8 +23,8 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var amountTextField: UICustomTextField! {
         didSet {
-                amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTapped)))
-            }
+            amountTextField?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTapped)))
+        }
     }
     
     @IBOutlet var sellButton: UICustomButton!
@@ -63,11 +63,11 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         
         buyVC.message = message
         navigationController?.pushViewController(buyVC, animated: true)
-    
-}
+        
+    }
     
     //MARK: - Properties
-
+    
     var currencySelected: Currency?
     
     var currencyISO = String()
@@ -75,7 +75,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     var user: User?
     
     //MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Câmbio"
@@ -163,7 +163,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - Selectors
-
+    
     @objc func doneButtonTapped() {
         amountTextField.resignFirstResponder()
         
@@ -177,7 +177,7 @@ extension UITextField {
     func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
         let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
         let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
-
+        
         let toolbar: UIToolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.items = [
@@ -186,10 +186,10 @@ extension UITextField {
             UIBarButtonItem(title: "Done", style: .done, target: onDone.target, action: onDone.action)
         ]
         toolbar.sizeToFit()
-
+        
         self.inputAccessoryView = toolbar
     }
-
+    
     @objc func doneButtonTapped() { self.resignFirstResponder() }
     @objc func cancelButtonTapped() { self.resignFirstResponder() }
 }

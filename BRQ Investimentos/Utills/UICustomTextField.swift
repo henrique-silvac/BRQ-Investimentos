@@ -8,11 +8,11 @@
 import UIKit
 
 class UICustomTextField: UITextField {
-    
     func setBorderTextField() {
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.white.cgColor
-
+        
     }
+    
 }

@@ -73,9 +73,9 @@ class HomeTableViewController: UITableViewController {
             cambioVC.currencyISO = currencyISO
             navigationController?.pushViewController(cambioVC, animated: true)
         }
-
-    }
         
+    }
+    
     //MARK: - Creating Cell
     
     func settingLabels(_ cell: HomeTableViewCell, for indexPath: IndexPath) {
