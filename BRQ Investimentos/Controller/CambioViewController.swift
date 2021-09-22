@@ -56,6 +56,11 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        settingLabels()
+        
+    }
+    
     //MARK: - Cambio labels
     
     func settingLabels() {
@@ -78,22 +83,48 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         
         balanceLabel.text = ("\(userCurrencyAmount) \(currencyISO) em caixa")
         cashLabel.text = ("Saldo disponível: \(user.balanceLabel)")
+        
+        buttonSettings(buyButton, user, currency, iso: currencyISO)
+        buttonSettings(sellButton, user, currency, iso: currencyISO)
+        
+        amountTextField.text = ""
+        
     }
     
     //MARK: - Create Buttons
     
-    func ButtonPressed(_ sender: UICustomButton) {
-        guard let user = user else { return }
+    func buttonSettings(_ button: UICustomButton, _ user: User, _ currency: Currency, iso: String) {
+        guard let currencyBuyPrice = currency.buy else { return }
+        guard let currencyWallet = user.userWallet[iso] else { return }
+        guard let stringInputAmount = amountTextField.text else { return }
         
-        if sender.tag == 0 {
-            //sell button
-            user.balance += 10
-        } else {
-            //buy button
-            user.balance -= 10
+        var totalPrice = Double()
+        var userInput = Int()
+        
+        if let intInputAmount = Int(stringInputAmount) {
+            userInput = intInputAmount
+            totalPrice = currencyBuyPrice * Double(intInputAmount)
         }
-        settingLabels()
         
+        if button.tag == 1 {
+            // buy button
+            if (user.balance < currencyBuyPrice || user.balance < totalPrice) {
+                button.disable()
+            } else {
+                button.enable()
+            }
+        } else {
+            // sell button
+            if (userInput > currencyWallet || currency.sell == nil || currencyWallet == 0) {
+                button.disable()
+            } else {
+                button.enable()
+            }
+        }
+        
+        if (stringInputAmount.isEmpty || userInput == 0) {
+            button.disable()
+        }
     }
     
     //MARK: - Selectors
@@ -102,7 +133,7 @@ class CambioViewController: UIViewController, UITextFieldDelegate {
         amountTextField.resignFirstResponder()
         
     }
-
+    
 }
 
 //MARK: - Extensions

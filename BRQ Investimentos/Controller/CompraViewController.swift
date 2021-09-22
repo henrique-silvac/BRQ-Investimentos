@@ -12,7 +12,7 @@ class CompraViewController: UIViewController {
     //MARK: - @IBOutlets
     
     @IBOutlet var textLabel: UILabel!
-    @IBOutlet var homeButton: UIButton!
+    @IBOutlet var homeButton: UICustomButton!
 //    @IBAction func homeButtonPressed(_ sender: UICustomButton) {
 //        navigationController?.popToRootViewController(animated: true)
 //    }
@@ -25,6 +25,7 @@ class CompraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Compra"
         
     }
     
